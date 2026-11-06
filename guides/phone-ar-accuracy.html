@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How accurate is AR measuring on a phone? LiDAR, ARKit and ARCore</title>
+<meta name="description" content="What to expect from AR measuring on a phone. Why LiDAR helps, what makes readings worse, how to test your own phone, and when to use a real tape instead.">
+<link rel="canonical" href="https://eastframe-technology.github.io/measurelog-support/guides/phone-ar-accuracy.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How accurate is AR measuring on a phone, really?">
+<meta property="og:description" content="What to expect from AR measuring on a phone. Why LiDAR helps, what makes readings worse, how to test your own phone, and when to use a real tape instead.">
+<meta property="og:image" content="https://eastframe-technology.github.io/measurelog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/measurelog-support/guides/phone-ar-accuracy.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How accurate is AR measuring on a phone, really?","description":"What to expect from AR measuring on a phone. Why LiDAR helps, what makes readings worse, how to test your own phone, and when to use a real tape instead.","datePublished":"2026-11-06","author":{"@type":"Organization","name":"Eastframe Technology LLC"},"publisher":{"@type":"Organization","name":"Eastframe Technology LLC"},"image":"https://eastframe-technology.github.io/measurelog-support/img/og.jpg"}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">MeasureLog</a><a href="../tools/length-converter.html">Converter</a><a href="../tools/room-calculator.html">Room area</a><a href="../guides/phone-ar-accuracy.html">Accuracy</a><a href="../#support">Support</a></nav>
+  <h1>How accurate is AR measuring on a phone, really?</h1>
+  <p class="lead">Short answer: good enough to plan with, not good enough to cut to. With LiDAR, expect to be within about 1%. Without LiDAR, expect a few centimeters over a couple of meters. Check anything critical with a real tape.</p>
+  <p>Those are the rough figures MeasureLog gives in its own help screen. They are expectations for sensible conditions, not lab results or a guarantee, and your own results can be worse.</p>
+
+  <h2>What the phone is doing</h2>
+  <p>A phone has no tape inside it. It works out its own position in the room from the camera and the motion sensors, using Apple's ARKit on iPhone and Google's ARCore on Android. It tracks visual details from frame to frame, and fits flat surfaces to them.</p>
+  <p>When you drop a point, the phone draws a line from the camera through the dot on the screen and sees where that line meets a surface. The length is the straight line between two of those points in 3D. Error gets in at two places:</p>
+  <ul>
+    <li><strong>The surface estimate.</strong> If the phone thinks the wall is 3 cm closer than it is, your point is off too.</li>
+    <li><strong>Tracking drift.</strong> As you walk from one point to the next, small errors in the phone's idea of where it is build up.</li>
+  </ul>
+
+  <h2>Why LiDAR helps</h2>
+  <p>Recent Pro iPhones and iPads have a LiDAR scanner that measures the distance to surfaces directly with light, so the phone doesn't have to infer depth as much from the camera image. This helps most on plain walls, where the camera has little to track.</p>
+  <p>Android phones use ARCore, which relies on the camera and motion sensors. Some models add a depth sensor, but most don't. So on Android, expect the no-LiDAR figure: a few centimeters over a couple of meters, sometimes more on plain surfaces. The Android version of MeasureLog isn't finished, so that is an expectation and not a tested result. AR measuring on Android also needs a phone that supports Google Play Services for AR, and Google <a href="https://developers.google.com/ar/devices">keeps a list of them</a>.</p>
+
+  <h2>What those numbers mean in practice</h2>
+  <div class="tablewrap"><table>
+    <tr><th>True length</th><th>1% off</th><th>What you can do with that</th></tr>
+    <tr><td>50 cm</td><td>5 mm</td><td>Check that a box fits on a shelf with room to spare</td></tr>
+    <tr><td>2 m</td><td>2 cm</td><td>Decide if a sofa fits a wall</td></tr>
+    <tr><td>4 m</td><td>4 cm</td><td>Estimate a room for planning</td></tr>
+  </table></div>
+  <p>Area doubles the problem, since both sides can be off in the same direction. A room of 5 m by 4 m is 20 m². If both sides read 1% long, you get 5.05 m by 4.04 m, which is 20.4 m². That's 2% more. Without LiDAR, a few centimeters on each side has a similar effect, more on a small area than on a large one.</p>
+
+  <h2>What makes it worse</h2>
+  <ul>
+    <li><strong>Plain surfaces.</strong> A blank white wall gives the camera nothing to hold on to.</li>
+    <li><strong>Dim light.</strong> The camera sees less detail.</li>
+    <li><strong>Glass, mirrors and shiny surfaces.</strong> The phone can see through them, or see reflections as if they were real.</li>
+    <li><strong>Fast movement.</strong> Motion blur breaks the tracking.</li>
+    <li><strong>Long distances.</strong> Drift grows the further you walk, and far surfaces are harder to judge.</li>
+    <li><strong>Shallow angles.</strong> Aiming along a wall makes a tiny tilt of the phone move the point a long way.</li>
+    <li><strong>Moving things.</strong> Curtains, pets and people confuse it.</li>
+  </ul>
+
+  <h2>How to get a better reading</h2>
+  <ol>
+    <li>Start by moving the phone slowly for a few seconds so it can find surfaces.</li>
+    <li>Turn the lights on, and aim at a part with some texture.</li>
+    <li>Stand so you can point fairly straight at each point, not along the wall.</li>
+    <li>Move smoothly and steadily between the points.</li>
+    <li>Measure twice. If the two results differ by a lot, try again from a different position.</li>
+  </ol>
+
+  <h2>Test your own phone</h2>
+  <p>Don't take anyone's word for it, including ours. Measure something you know. An A4 sheet is 297 mm long. A US Letter sheet is 11 inches. For long distances, use a wall you've already measured with a tape. Do it three times in your normal conditions. The gap from the true value shows the error, and the spread between tries shows how far to trust one reading.</p>
+
+  <h2>When a phone is fine, and when it isn't</h2>
+  <p><strong>Fine:</strong> will it fit, roughly how big is this room, how large a rug, remembering the size of a window before you go shopping.</p>
+  <p><strong>Use a tape:</strong> anything you will cut, anything made to measure, countertops, blinds, final flooring orders, and any time a few centimeters costs real money.</p>
+  <p><strong>For small things,</strong> AR is the wrong tool. An on-screen ruler is better. MeasureLog's is calibrated with a bank card, whose standard width is 85.60 mm.</p>
+
+  <h2>What a phone can't measure</h2>
+  <p>A camera sees surfaces. It can't see through a wall, so it can't find studs, pipes or cables, and MeasureLog has no such feature. Use a proper detector for that.</p>
+
+  <div class="card"><strong>MeasureLog</strong> is an AR tape measure with no ads and no subscription, and each measurement is saved with a photo.
+  <!-- PLAY_CTA --><p class="coming">Coming soon to Google Play</p><!-- /PLAY_CTA --></div>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+</body>
+</html>

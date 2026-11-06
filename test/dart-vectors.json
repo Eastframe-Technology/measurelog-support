@@ -1,0 +1,266 @@
+{
+ "lengths": [
+  {
+   "m": 0.001,
+   "metric": "0.1 cm",
+   "imperial": "0 in"
+  },
+  {
+   "m": 0.05,
+   "metric": "5 cm",
+   "imperial": "2 in"
+  },
+  {
+   "m": 0.1,
+   "metric": "10 cm",
+   "imperial": "3.9 in"
+  },
+  {
+   "m": 0.25,
+   "metric": "25 cm",
+   "imperial": "9.8 in"
+  },
+  {
+   "m": 0.3047,
+   "metric": "30.5 cm",
+   "imperial": "12 in"
+  },
+  {
+   "m": 0.3048,
+   "metric": "30.5 cm",
+   "imperial": "1 ft 0 in"
+  },
+  {
+   "m": 0.5,
+   "metric": "50 cm",
+   "imperial": "1 ft 7.7 in"
+  },
+  {
+   "m": 0.6,
+   "metric": "60 cm",
+   "imperial": "1 ft 11.6 in"
+  },
+  {
+   "m": 0.62,
+   "metric": "62 cm",
+   "imperial": "2 ft 0.4 in"
+  },
+  {
+   "m": 0.625,
+   "metric": "62.5 cm",
+   "imperial": "2 ft 0.6 in"
+  },
+  {
+   "m": 0.9999,
+   "metric": "100 cm",
+   "imperial": "3 ft 3.4 in"
+  },
+  {
+   "m": 1.0,
+   "metric": "1.00 m",
+   "imperial": "3 ft 3.4 in"
+  },
+  {
+   "m": 1.2,
+   "metric": "1.20 m",
+   "imperial": "3 ft 11.2 in"
+  },
+  {
+   "m": 1.5,
+   "metric": "1.50 m",
+   "imperial": "4 ft 11.1 in"
+  },
+  {
+   "m": 1.778,
+   "metric": "1.78 m",
+   "imperial": "5 ft 10 in"
+  },
+  {
+   "m": 2.18,
+   "metric": "2.18 m",
+   "imperial": "7 ft 1.8 in"
+  },
+  {
+   "m": 2.26,
+   "metric": "2.26 m",
+   "imperial": "7 ft 5 in"
+  },
+  {
+   "m": 3.0,
+   "metric": "3.00 m",
+   "imperial": "9 ft 10.1 in"
+  },
+  {
+   "m": 3.64,
+   "metric": "3.64 m",
+   "imperial": "11 ft 11.3 in"
+  },
+  {
+   "m": 0.6095,
+   "metric": "61 cm",
+   "imperial": "2 ft 0 in"
+  },
+  {
+   "m": 10.0,
+   "metric": "10.00 m",
+   "imperial": "32 ft 9.7 in"
+  },
+  {
+   "m": 12.3456,
+   "metric": "12.35 m",
+   "imperial": "40 ft 6 in"
+  },
+  {
+   "m": 100.0,
+   "metric": "100.00 m",
+   "imperial": "328 ft 1 in"
+  }
+ ],
+ "areas": [
+  {
+   "m2": 0.0,
+   "metric": "0.00 m²",
+   "imperial": "0.0 ft²"
+  },
+  {
+   "m2": 0.744,
+   "metric": "0.74 m²",
+   "imperial": "8.0 ft²"
+  },
+  {
+   "m2": 1.0,
+   "metric": "1.00 m²",
+   "imperial": "10.8 ft²"
+  },
+  {
+   "m2": 4.08,
+   "metric": "4.08 m²",
+   "imperial": "43.9 ft²"
+  },
+  {
+   "m2": 20.0,
+   "metric": "20.00 m²",
+   "imperial": "215.3 ft²"
+  },
+  {
+   "m2": 37.16,
+   "metric": "37.16 m²",
+   "imperial": "400.0 ft²"
+  }
+ ],
+ "polys": [
+  {
+   "name": "triangle",
+   "points": [
+    [
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "area": 0.5,
+   "perimeter": 3.414213562373095
+  },
+  {
+   "name": "tilted",
+   "points": [
+    [
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.62,
+     0.0,
+     0.0
+    ],
+    [
+     0.62,
+     1.2,
+     0.3
+    ],
+    [
+     0.0,
+     1.2,
+     0.3
+    ]
+   ],
+   "area": 0.7668976463648849,
+   "perimeter": 3.7138633753705967
+  },
+  {
+   "name": "room",
+   "points": [
+    [
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     5.0,
+     0.0,
+     0.0
+    ],
+    [
+     5.0,
+     4.0,
+     0.0
+    ],
+    [
+     0.0,
+     4.0,
+     0.0
+    ]
+   ],
+   "area": 20.0,
+   "perimeter": 18.0
+  },
+  {
+   "name": "lshape",
+   "points": [
+    [
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     6.0,
+     0.0,
+     0.0
+    ],
+    [
+     6.0,
+     3.0,
+     0.0
+    ],
+    [
+     4.0,
+     3.0,
+     0.0
+    ],
+    [
+     4.0,
+     5.0,
+     0.0
+    ],
+    [
+     0.0,
+     5.0,
+     0.0
+    ]
+   ],
+   "area": 26.0,
+   "perimeter": 22.0
+  }
+ ]
+}

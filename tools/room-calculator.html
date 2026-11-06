@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room area and perimeter calculator: m², square feet, L-shaped rooms</title>
+<meta name="description" content="Work out floor area and perimeter for rectangular and L-shaped rooms, in meters or feet and inches. Adds wall area and flooring waste. Free, runs in your browser.">
+<link rel="canonical" href="https://eastframe-technology.github.io/measurelog-support/tools/room-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Room area and perimeter calculator: m², square feet, L-shaped rooms">
+<meta property="og:description" content="Work out floor area and perimeter for rectangular and L-shaped rooms, in meters or feet and inches. Adds wall area and flooring waste. Free, runs in your browser.">
+<meta property="og:image" content="https://eastframe-technology.github.io/measurelog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/measurelog-support/tools/room-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I work out the area of a room?","acceptedAnswer":{"@type":"Answer","text":"For a rectangular room, multiply length by width. For other shapes, split the floor into rectangles, work out each one and add them up."}},{"@type":"Question","name":"What is the perimeter for?","acceptedAnswer":{"@type":"Answer","text":"It is the distance around the walls. You need it to buy baseboards, crown molding or edge trim, and to work out wall area for paint. For baseboards, take off the width of each door."}},{"@type":"Question","name":"How much extra flooring should I buy?","acceptedAnswer":{"@type":"Answer","text":"A common rule of thumb is 5 to 10% extra for cuts and waste, and often more for diagonal layouts or patterns that must match. Check with the seller of your flooring, since it depends on the product and the room."}},{"@type":"Question","name":"Can I mix feet and inches?","acceptedAnswer":{"@type":"Answer","text":"Yes. With feet selected, type 12 6 or 12' 6\" for 12 feet 6 inches. You can also type a value with its own unit, such as 360 cm, in any box."}},{"@type":"Question","name":"Does this page send my numbers anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculation runs in your browser and nothing you type leaves it."}}]}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">MeasureLog</a><a href="../tools/length-converter.html">Converter</a><a href="../tools/room-calculator.html">Room area</a><a href="../guides/phone-ar-accuracy.html">Accuracy</a><a href="../#support">Support</a></nav>
+  <h1>Room area and perimeter calculator</h1>
+  <p class="lead">Enter the size of a rectangular or L-shaped room. You get the floor area in square meters, square feet and square yards, and the distance around the walls.</p>
+
+  <section class="tool" aria-label="Room calculator">
+    <div class="fields">
+      <label>Shape<select id="shape"><option value="rect">Rectangle</option><option value="l">L-shape</option></select></label>
+      <label>Units<select id="unit"><option value="m">Meters</option><option value="ft">Feet and inches</option></select></label>
+    </div>
+    <div class="fields">
+      <label>Length<input id="length" type="text" inputmode="text" autocomplete="off" value="5"></label>
+      <label>Width<input id="width" type="text" inputmode="text" autocomplete="off" value="4"></label>
+    </div>
+    <div class="fields" id="notch" hidden>
+      <label>Cut-out corner, length<input id="nlength" type="text" inputmode="text" autocomplete="off"></label>
+      <label>Cut-out corner, width<input id="nwidth" type="text" inputmode="text" autocomplete="off"></label>
+    </div>
+    <div class="fields">
+      <label>Ceiling height (optional)<input id="height" type="text" inputmode="text" autocomplete="off"></label>
+      <label>Extra for flooring waste<select id="waste"><option value="0">None</option><option value="5">5%</option><option value="10">10%</option><option value="15">15%</option></select></label>
+    </div>
+    <p class="note" id="hint"></p>
+    <p class="err" id="err" role="alert" hidden></p>
+    <div class="result" id="out">
+      <p class="main" id="r-area">20 m²</p>
+      <table class="rows">
+        <tr><td>Square feet</td><td id="r-ft2"></td></tr>
+        <tr><td>Square yards</td><td id="r-yd2"></td></tr>
+        <tr><td>Perimeter</td><td id="r-per"></td></tr>
+        <tr><td>Perimeter in feet</td><td id="r-perft"></td></tr>
+        <tr id="r-wallrow" hidden><td>Wall area, before doors and windows</td><td id="r-wall"></td></tr>
+        <tr id="r-wasterow" hidden><td>Floor area with extra</td><td id="r-waste"></td></tr>
+      </table>
+    </div>
+  </section>
+  <p class="note">Everything runs in your browser. Nothing you type leaves this page.</p>
+
+  <div class="card"><strong>MeasureLog</strong> is an AR tape measure app. Closed shapes with perimeter and area are part of MeasureLog Pro, and each measurement is saved with a photo.
+  <!-- PLAY_CTA --><p class="coming">Coming soon to Google Play</p><!-- /PLAY_CTA --></div>
+
+  <h2>The formulas</h2>
+  <p><strong>Rectangle.</strong> <code>area = length × width</code> and <code>perimeter = 2 × (length + width)</code>.</p>
+  <p><strong>L-shape.</strong> Measure the whole outer rectangle, then the rectangle missing from one corner. <code>area = length × width − cut-out length × cut-out width</code>. The perimeter is the same as for the outer rectangle, because the two walls around the cut-out add up to exactly the lengths they replace.</p>
+  <p><strong>Walls.</strong> <code>wall area = perimeter × ceiling height</code>, before taking off doors and windows.</p>
+  <p>The calculation uses the same polygon method as the MeasureLog app (Newell's method) on the corners of the room.</p>
+
+  <h2>Worked examples</h2>
+  <p><strong>A 5 m by 4 m room with a 2.5 m ceiling.</strong> The area is 5 × 4 = 20 m², or 215.3 ft². The perimeter is 2 × (5 + 4) = 18 m. The wall area is 18 × 2.5 = 45 m². With 10% extra flooring, you would plan for 22 m².</p>
+  <p><strong>A 12 ft 6 in by 10 ft room.</strong> The area is 12.5 × 10 = 125 ft². The perimeter is 2 × (12.5 + 10) = 45 ft.</p>
+  <p><strong>An L-shaped room, 6 m by 5 m, with a 2 m by 2 m corner missing.</strong> The area is 30 − 4 = 26 m². The perimeter is 2 × (6 + 5) = 22 m.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li><strong>Few rooms are perfectly square.</strong> The formulas assume right angles. Measure each dimension in two places and use the larger number when you're buying material. <a href="../guides/measure-a-room.html">How to measure a room</a>.</li>
+    <li><strong>Only one cut-out.</strong> For more complicated floors, split them into rectangles, run each one and add up the areas. Don't add up the perimeters: inner walls aren't real walls.</li>
+    <li><strong>An estimate for planning.</strong> Your supplier's number comes first when you order, because waste depends on the product and the layout.</li>
+  </ul>
+
+  <h2>Frequently asked</h2>
+  <div class="card faq">
+    <p><strong>How do I work out the area of a room?</strong> For a rectangular room, multiply length by width. For other shapes, split the floor into rectangles, work out each one and add them up.</p>
+    <p><strong>What is the perimeter for?</strong> It is the distance around the walls. You need it to buy baseboards, crown molding or edge trim, and to work out wall area for paint. For baseboards, take off the width of each door.</p>
+    <p><strong>How much extra flooring should I buy?</strong> A common rule of thumb is 5 to 10% extra for cuts and waste, and often more for diagonal layouts or patterns that must match. Check with the seller of your flooring, since it depends on the product and the room.</p>
+    <p><strong>Can I mix feet and inches?</strong> Yes. With feet selected, type 12 6 or 12' 6" for 12 feet 6 inches. You can also type a value with its own unit, such as 360 cm, in any box.</p>
+    <p><strong>Does this page send my numbers anywhere?</strong> No. The calculation runs in your browser and nothing you type leaves it.</p>
+  </div>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+<script src="measure.js"></script>
+<script src="room-calculator-ui.js"></script>
+</body>
+</html>

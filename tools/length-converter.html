@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feet and inches to cm and m converter, with fractions</title>
+<meta name="description" content="Convert feet and inches to cm and meters and back, with fractions down to 1/32 inch. Shows tape-measure marks and rounding error. Free, runs in your browser.">
+<link rel="canonical" href="https://eastframe-technology.github.io/measurelog-support/tools/length-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feet and inches to cm and m converter, with fractions">
+<meta property="og:description" content="Convert feet and inches to cm and meters and back, with fractions down to 1/32 inch. Shows tape-measure marks and rounding error. Free, runs in your browser.">
+<meta property="og:image" content="https://eastframe-technology.github.io/measurelog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/measurelog-support/tools/length-converter.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many cm is 5 ft 10 in?","acceptedAnswer":{"@type":"Answer","text":"5 ft 10 in is 70 inches. 70 × 2.54 = 177.8 cm, which is 1.778 m."}},{"@type":"Question","name":"How do I convert cm to feet and inches?","acceptedAnswer":{"@type":"Answer","text":"Divide the cm by 2.54 to get inches. Divide those by 12: the whole number is the feet, and the remainder is the inches. So 180 cm is 70.87 in, which is 5 ft 10.87 in, or 5 ft 10 7/8 in to the nearest eighth."}},{"@type":"Question","name":"Why is the fraction not exact?","acceptedAnswer":{"@type":"Answer","text":"Tape measures mark halves, quarters, eighths and sixteenths, and most metric values fall between those marks. The page tells you how far the fraction is from the exact value, in millimeters."}},{"@type":"Question","name":"Can I type a fraction?","acceptedAnswer":{"@type":"Answer","text":"Yes. Type 10 1/2 or 10.5 in the inches box, or use the fraction menu. A comma works as a decimal point."}},{"@type":"Question","name":"Does this page send my numbers anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculation runs in your browser and nothing you type leaves it."}}]}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">MeasureLog</a><a href="../tools/length-converter.html">Converter</a><a href="../tools/room-calculator.html">Room area</a><a href="../guides/phone-ar-accuracy.html">Accuracy</a><a href="../#support">Support</a></nav>
+  <h1>Feet and inches to cm and m converter</h1>
+  <p class="lead">Type in any box and the others update. Fractions of an inch work both ways, and you can choose how finely to round them.</p>
+
+  <section class="tool" aria-label="Length converter">
+    <div class="fields">
+      <label>Feet<input id="feet" type="text" inputmode="decimal" autocomplete="off" value="5"></label>
+      <label>Inches<input id="inches" type="text" inputmode="text" autocomplete="off" value="10"></label>
+      <label>Fraction<select id="frac"><option value="0">no fraction</option><option value="1">1/16</option><option value="2">1/8</option><option value="3">3/16</option><option value="4">1/4</option><option value="5">5/16</option><option value="6">3/8</option><option value="7">7/16</option><option value="8">1/2</option><option value="9">9/16</option><option value="10">5/8</option><option value="11">11/16</option><option value="12">3/4</option><option value="13">13/16</option><option value="14">7/8</option><option value="15">15/16</option></select></label>
+    </div>
+    <p class="or">or</p>
+    <div class="fields">
+      <label>Centimeters<input id="cm" type="text" inputmode="decimal" autocomplete="off" value="177.8"></label>
+      <label>Meters<input id="m" type="text" inputmode="decimal" autocomplete="off" value="1.778"></label>
+      <label>Round fractions to<select id="round"><option value="2">1/2 in</option><option value="4">1/4 in</option><option value="8">1/8 in</option><option value="16" selected>1/16 in</option><option value="32">1/32 in</option></select></label>
+    </div>
+    <div class="result" id="out">
+      <p class="main" id="r-ftin">5 ft 10 in</p>
+      <table class="rows">
+        <tr><td>On a tape</td><td id="r-marks">5' 10"</td></tr>
+        <tr><td>Total inches</td><td id="r-in">70 in</td></tr>
+        <tr><td>Decimal feet</td><td id="r-ft">5.833 ft</td></tr>
+        <tr><td>Centimeters</td><td id="r-cm">177.8 cm</td></tr>
+        <tr><td>Millimeters</td><td id="r-mm">1778 mm</td></tr>
+        <tr><td>Meters</td><td id="r-m">1.778 m</td></tr>
+      </table>
+      <p class="note" id="r-err">The fraction is exact.</p>
+    </div>
+  </section>
+  <p class="note">Everything runs in your browser. Nothing you type leaves this page.</p>
+
+  <div class="card"><strong>MeasureLog</strong> is an AR tape measure app that shows feet and inches or metric, and saves each measurement with a photo.
+  <!-- PLAY_CTA --><p class="coming">Coming soon to Google Play</p><!-- /PLAY_CTA --></div>
+
+  <h2>The formula</h2>
+  <p>An inch is exactly 2.54 cm, by international definition. A foot is 12 inches, so exactly 30.48 cm.</p>
+  <p><code>cm = (feet × 12 + inches) × 2.54</code></p>
+  <p><code>total inches = cm / 2.54</code>, then <code>feet = whole part of (total inches / 12)</code>, and the rest is inches.</p>
+  <p>For a fraction, the page rounds the total inches to the nearest mark and then reduces it, so 8/16 shows as 1/2. If the rounding reaches a whole inch or a whole foot, it carries over: 11.99 inches shows as 1 ft 0 in, not 11 16/16 in.</p>
+
+  <h2>Worked example</h2>
+  <p>Convert 5 ft 10 1/2 in to metric. That is 5 × 12 + 10.5 = 70.5 inches. Then 70.5 × 2.54 = 179.07 cm, or 1.7907 m.</p>
+  <p>Going back, start from 180 cm. 180 / 2.54 = 70.866 inches. 70 inches is 5 ft 10 in, leaving 0.866 in. To the nearest sixteenth, 0.866 × 16 = 13.9, which rounds to 14/16, or 7/8. The result is 5 ft 10 7/8 in, about 0.2 mm off the exact value.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li><strong>A conversion can't add precision.</strong> If you measured to the nearest centimeter, two decimals of an inch mean nothing.</li>
+    <li><strong>Rounding adds up.</strong> Add measurements up first, then convert. Converting and rounding each one piles up small errors.</li>
+    <li><strong>Survey feet are not covered.</strong> This uses the international foot of 0.3048 m, the one in ordinary use. The difference is tiny for anything in a building.</li>
+  </ul>
+
+  <h2>Common lengths</h2>
+  <div class="tablewrap"><table><tr><th>Feet and inches</th><th>Centimeters</th><th>Meters</th></tr><tr><td>4 ft 0 in</td><td>121.92 cm</td><td>1.22 m</td></tr><tr><td>5 ft 0 in</td><td>152.4 cm</td><td>1.52 m</td></tr><tr><td>5 ft 2 in</td><td>157.48 cm</td><td>1.57 m</td></tr><tr><td>5 ft 4 in</td><td>162.56 cm</td><td>1.63 m</td></tr><tr><td>5 ft 6 in</td><td>167.64 cm</td><td>1.68 m</td></tr><tr><td>5 ft 8 in</td><td>172.72 cm</td><td>1.73 m</td></tr><tr><td>5 ft 10 in</td><td>177.8 cm</td><td>1.78 m</td></tr><tr><td>6 ft 0 in</td><td>182.88 cm</td><td>1.83 m</td></tr><tr><td>6 ft 2 in</td><td>187.96 cm</td><td>1.88 m</td></tr><tr><td>7 ft 0 in</td><td>213.36 cm</td><td>2.13 m</td></tr><tr><td>8 ft 0 in</td><td>243.84 cm</td><td>2.44 m</td></tr><tr><td>9 ft 0 in</td><td>274.32 cm</td><td>2.74 m</td></tr><tr><td>10 ft 0 in</td><td>304.8 cm</td><td>3.05 m</td></tr><tr><td>12 ft 0 in</td><td>365.76 cm</td><td>3.66 m</td></tr></table></div>
+
+  <h2>Fractions of an inch in millimeters</h2>
+  <div class="tablewrap"><table><tr><th>Inch</th><th>Millimeters</th></tr><tr><td>1/16 in</td><td>1.5875 mm</td></tr><tr><td>1/8 in</td><td>3.175 mm</td></tr><tr><td>3/16 in</td><td>4.7625 mm</td></tr><tr><td>1/4 in</td><td>6.35 mm</td></tr><tr><td>5/16 in</td><td>7.9375 mm</td></tr><tr><td>3/8 in</td><td>9.525 mm</td></tr><tr><td>7/16 in</td><td>11.1125 mm</td></tr><tr><td>1/2 in</td><td>12.7 mm</td></tr><tr><td>5/8 in</td><td>15.875 mm</td></tr><tr><td>3/4 in</td><td>19.05 mm</td></tr><tr><td>7/8 in</td><td>22.225 mm</td></tr></table></div>
+
+  <h2>Frequently asked</h2>
+  <div class="card faq">
+    <p><strong>How many cm is 5 ft 10 in?</strong> 5 ft 10 in is 70 inches. 70 × 2.54 = 177.8 cm, which is 1.778 m.</p>
+    <p><strong>How do I convert cm to feet and inches?</strong> Divide the cm by 2.54 to get inches. Divide those by 12: the whole number is the feet, and the remainder is the inches. So 180 cm is 70.87 in, which is 5 ft 10.87 in, or 5 ft 10 7/8 in to the nearest eighth.</p>
+    <p><strong>Why is the fraction not exact?</strong> Tape measures mark halves, quarters, eighths and sixteenths, and most metric values fall between those marks. The page tells you how far the fraction is from the exact value, in millimeters.</p>
+    <p><strong>Can I type a fraction?</strong> Yes. Type 10 1/2 or 10.5 in the inches box, or use the fraction menu. A comma works as a decimal point.</p>
+    <p><strong>Does this page send my numbers anywhere?</strong> No. The calculation runs in your browser and nothing you type leaves it.</p>
+  </div>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+<script src="measure.js"></script>
+<script src="length-converter-ui.js"></script>
+</body>
+</html>

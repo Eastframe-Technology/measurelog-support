@@ -3,26 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MeasureLog support</title>
-<meta name="description" content="Support and privacy policy for MeasureLog, the AR tape measure app.">
-<style>
-  :root { color-scheme: light dark; --bg:#f6f5f2; --fg:#0f1720; --muted:#55636f; --accent:#a37a00; --card:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#111214; --fg:#e8eef4; --muted:#9fb0bf; --accent:#ffd54f; --card:#1c1d21; } }
-  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:680px; margin:0 auto; padding:48px 16px 64px; }
-  h1 { font-size:34px; margin:0 0 4px; } h2 { margin-top:40px; font-size:22px; }
-  p.lead { color:var(--muted); margin-top:0; }
-  .card { background:var(--card); border-radius:14px; padding:16px 20px; margin:16px 0; }
-  a { color:var(--accent); }
-  .logo { width:72px; height:72px; border-radius:18px; display:block; margin-bottom:16px; }
-  footer { color:var(--muted); font-size:14px; margin-top:48px; }
-</style>
+<title>MeasureLog: AR tape measure app, coming soon to Google Play</title>
+<meta name="description" content="MeasureLog measures lengths and area with your phone camera and saves each with a photo. No ads, no subscription. Coming soon to Google Play. Free online tools today.">
+<link rel="canonical" href="https://eastframe-technology.github.io/measurelog-support/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MeasureLog: an AR tape measure that remembers">
+<meta property="og:description" content="MeasureLog measures lengths and area with your phone camera and saves each with a photo. No ads, no subscription. Coming soon to Google Play. Free online tools today.">
+<meta property="og:image" content="https://eastframe-technology.github.io/measurelog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/measurelog-support/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"MeasureLog: AR Tape Measure","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","description":"AR tape measure: lengths, perimeter and area with your camera, saved with a photo. No ads, no subscription, no account. Coming soon to Google Play.","image":"https://eastframe-technology.github.io/measurelog-support/img/og.jpg","publisher":{"@type":"Organization","name":"Eastframe Technology LLC"}}
+</script>
 </head>
 <body>
 <main>
-  <img class="logo" src="icon.png" alt="">
-  <h1>MeasureLog</h1>
-  <p class="lead">An AR tape measure that remembers: lengths, perimeter and area with your camera, saved with a photo. Free, with one optional unlock. No ads, no subscription, no account.</p>
+  <nav><a class="home" href="./"><img src="icon.png" alt="">MeasureLog</a><a href="tools/length-converter.html">Converter</a><a href="tools/room-calculator.html">Room area</a><a href="guides/phone-ar-accuracy.html">Accuracy</a><a href="./#support">Support</a></nav>
+  <h1>An AR tape measure that remembers what you measured</h1>
+  <p class="lead">MeasureLog measures lengths, perimeter and area with your phone's camera, and saves each one with a photo, so you don't have to measure the window twice. No ads, no account, no subscription.</p>
+  <!-- PLAY_CTA --><p class="coming">Coming soon to Google Play</p><!-- /PLAY_CTA -->
+  <p class="note">MeasureLog isn't available to download yet. An Android version using ARCore is being built, and we have no release date to share. This page describes the app as built so far for iPhone, using ARKit, and details may change for Android. Meanwhile, the <a href="#tools">free tools below</a> work in your browser.</p>
+
+  <div class="shots" aria-label="Screenshots from the iPhone version">
+    <img src="img/shot-1.webp" width="200" height="435" alt="MeasureLog measuring a bookcase, showing a perimeter of 3.64 m and an area of 0.74 m²">
+    <img src="img/shot-2.webp" width="200" height="435" alt="A live measurement in progress, with a total of 62 cm so far" loading="lazy">
+    <img src="img/shot-3.webp" width="200" height="435" alt="List of saved measurements with photos, lengths and areas" loading="lazy">
+    <img src="img/shot-4.webp" width="200" height="435" alt="A saved bookcase measurement with its photo and lengths" loading="lazy">
+    <img src="img/shot-5.webp" width="200" height="435" alt="On-screen ruler reading 4.8 cm, with a Calibrate button" loading="lazy">
+  </div>
+  <p class="note">Screenshots from the iPhone version. The Android version may look a little different.</p>
+
+  <h2 id="tools">Free tools, no install</h2>
+  <p>These run in your browser. Nothing you type leaves the page.</p>
+  <div class="tools">
+    <a href="tools/length-converter.html"><strong>Feet, inches, cm and m converter</strong>With fractions down to 1/32 of an inch.</a>
+    <a href="tools/room-calculator.html"><strong>Room area and perimeter calculator</strong>Rectangles and L-shapes, in metric or feet and inches.</a>
+  </div>
+
+  <h2>What the app does</h2>
+  <div class="grid">
+    <div class="card"><h3>Point, tap, measure</h3>A dot on screen snaps to surfaces the phone has found. Tap + to drop a point. The length updates live as you move to the next one, and points chain into several lengths in a row.</div>
+    <div class="card"><h3>Saved with a photo</h3>Each measurement keeps a photo with the lines and lengths drawn on it, with a title, so you can search for it later. Rename, delete or share.</div>
+    <div class="card"><h3>Closed shapes (Pro)</h3>Close a shape to get its perimeter and area, handy for a rug, a table top or a floor.</div>
+    <div class="card"><h3>A calibrated ruler</h3>An on-screen ruler for small objects. Calibrate it once with a bank card, which is 85.60 mm wide. It needs no AR.</div>
+    <div class="card"><h3>Your units</h3>cm, m, inches, feet and inches. Switch at any time, including on saved measurements.</div>
+    <div class="card"><h3>Honest limits</h3>No stud finder and no fake features. A camera can't see inside a wall. <a href="guides/phone-ar-accuracy.html">How accurate phone AR measuring really is</a>.</div>
+  </div>
+
+  <h2>Where it helps</h2>
+  <ul>
+    <li><strong>Buying furniture.</strong> Will the sofa fit between the door and the radiator? A rough answer with a photo beats guessing in the shop.</li>
+    <li><strong>Planning a room.</strong> Get a first idea of floor area before you <a href="guides/measure-a-room.html">measure properly with a tape</a>.</li>
+    <li><strong>Keeping sizes.</strong> The bathroom window, the alcove, the car trunk: saved, with a picture, for the day you need them.</li>
+    <li><strong>Small things.</strong> A screw, a card or a plug, against the calibrated ruler.</li>
+  </ul>
+  <p>For anything you will cut or order to size, check with a real tape.</p>
 
   <h2 id="support">Support</h2>
   <div class="card">
@@ -30,8 +67,9 @@
   </div>
 
   <h2>Frequently asked</h2>
-  <div class="card">
-    <p><strong>How accurate is it?</strong> On iPhones and iPads with LiDAR (Pro models), usually within 1%. Without LiDAR, expect a few centimeters over a couple of meters. Move slowly, measure from a steady position, and check anything critical with a real tape measure.</p>
+  <div class="card faq">
+    <p><strong>Can I download it now?</strong> Not yet. MeasureLog is not in any store at the moment. An Android version using ARCore is being built, and we have no release date to share. The tools on this site work today in any browser.</p>
+    <p><strong>How accurate is it?</strong> On iPhones and iPads with LiDAR (Pro models), usually within 1%. Without LiDAR, expect a few centimeters over a couple of meters. Android phones track with ARCore: expect a few centimeters of error over a couple of meters, sometimes more on plain surfaces. Move slowly, measure from a steady position, and check anything critical with a real tape measure. <a href="guides/phone-ar-accuracy.html">More on accuracy</a>.</p>
     <p><strong>It says to move my phone. Why?</strong> Augmented reality needs to see the room to find surfaces. Move slowly, point at a textured, well-lit surface, and avoid plain white walls in dim light.</p>
     <p><strong>Is there a stud finder?</strong> No. A phone camera can't see inside walls, so MeasureLog doesn't pretend to.</p>
     <p><strong>How do I calibrate the ruler?</strong> In the Ruler tab, tap Calibrate, put any bank card on the screen and adjust until the frame matches its width.</p>
@@ -53,7 +91,7 @@
   <h2>Credits</h2>
   <div class="card"><p>Store pictures use a CC0 photograph from Unsplash via Wikimedia Commons ("Furnished living room").</p></div>
 
-  <footer>© 2026 Eastframe Technology LLC</footer>
+  <footer>© 2026 Eastframe Technology LLC · <a href="privacy.html">Privacy policy</a></footer>
 </main>
 </body>
 </html>
