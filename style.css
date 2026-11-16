@@ -22,7 +22,8 @@ footer { color:var(--muted); font-size:14px; margin-top:56px; border-top:1px sol
 nav { padding-bottom:14px; border-bottom:10px solid transparent; border-image:repeating-linear-gradient(90deg, var(--muted) 0 1px, transparent 1px 8px) 10; }
 h1 { letter-spacing:-0.025em; font-weight:750; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; margin:16px 0; }
-.coming { font-weight:700; border-left:6px solid var(--tape); padding:2px 0 2px 12px; margin:12px 0 4px; }
+.soon { display:inline-block; background:var(--tape); color:var(--tape-ink); font-weight:700; padding:11px 18px; border-radius:10px; margin:12px 0 4px; text-decoration:none; }
+.soon:hover { filter:brightness(0.95); }
 .shots { display:flex; gap:12px; overflow-x:auto; padding:8px 16px 12px; margin:20px -16px 0; scroll-snap-type:x mandatory; }
 .shots img { width:200px; height:auto; border-radius:8px; flex:none; scroll-snap-align:start; background:#17181b; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:12px; }
